@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Liked Songs</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #fff;
+        background:url(songimages/spotify\ bg9.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat:repeat-x;
+    }
+    
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #1DB954;
+    }
+    
+    .logo h1 {
+        margin: 0;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 18px;
+    }
+    
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+    
+    
+    .main-content {
+        padding: 20px;
+    }
+    
+    
+    .search-bar {
+        margin: 20px 0;
+    }
+    
+    .search-bar input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .playlist-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    
+    .playlist-item {
+        background-color: #282828;
+        padding: 20px;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 200px;
+        padding: 30px;
+        margin: 80px;
+    }
+    .playlist-item img{
+        width: 200px;
+        margin-top: 20px;
+    }
+    
+    .playlist-item:hover {
+        background-color: #3e3e3e;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Spotify</h1>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="library.html">Your Library</a>
+            <a href="liked_songs.html">Liked Songs</a>
+            <a href="create_playlist.html">Create Playlist</a>
+        </div>
+        
+    </div>
+
+    <div class="main-content">
+      
+        <h2>Liked Songs</h2>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search in liked songs...">
+        </div>
+        <div class="playlist-grid" id="playlist-grid">
+            <div class="playlist-item">Liked Song 1 <img src="songimages/16.jpg"></div>
+            <div class="playlist-item">Liked Song 2 <img src="songimages/3.jpg"></div>
+            <div class="playlist-item">Liked Song 3 <img src="songimages/2.jpg"></div>
+            <div class="playlist-item">Liked Song 4 <img src="songimages/14.jpg"></div>
+            <div class="playlist-item">Liked Song 5 <img src="songimages/13.jpg"></div>
+            <div class="playlist-item">Liked Song 6 <img src="songimages/10.jpg"></div>
+        </div>
+    </div>
+
+    <script>
+    const searchInput = document.getElementById('search-input');
+        const playlistGrid = document.getElementById('playlist-grid');
+        
+        searchInput.addEventListener('keyup', () => {
+            const filter = searchInput.value.toLowerCase();
+            const items = playlistGrid.getElementsByClassName('playlist-item');
+        
+            Array.from(items).forEach(item => {
+                const text = item.textContent || item.innerText;
+                if (text.toLowerCase().indexOf(filter) > -1) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

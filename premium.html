@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone - Premium</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #121212;
+        color: #fff;
+        background-image: url(songimages/spotify\ cover8.png);
+        background-size: cover;
+        background-position: center;
+        background-repeat:repeat-x;
+    }
+    
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #1DB954;
+    }
+    
+    .logo h1 {
+        margin: 0;
+    }
+    
+    .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-right: 20px;
+        font-size: 18px;
+    }
+    
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+    
+    
+    .main-content {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    #premium-button {
+        padding: 10px 20px;
+        font-size: 18px;
+        border: none;
+        border-radius: 5px;
+        background-color: #1DB954;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #premium-button:hover {
+        background-color: #1aa34a;
+    }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <h1>Spotify</h1>
+        </div>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="premium.html">Premium</a>
+            <a href="support.html">Support</a>
+            <a href="download.html">Download</a>
+        </div>
+        
+    </div>
+
+    <div class="main-content">
+        <h2>Get Premium</h2>
+        <p>Enjoy ad-free music, offline listening, and more. Choose your plan and start your Premium experience today.</p>
+        <button id="premium-button">Go Premium</button>
+    </div>
+
+    <script>
+    document.getElementById('premium-button').addEventListener('click', () => {
+        alert("Redirecting to the Premium subscription page...");
+    });
+    </script>
+</body>
+</html>
